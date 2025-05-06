@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@import "tailwindcss";
+
+
+body {
+  font-family: "Outfit", sans-serif;
+}
+
+.navbar-links a {
+  position: relative;
+  transition: 0.3s;
+}
+
+.navbar-links a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #171717;
+  bottom: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s;
+}
+
+.navbar-links a:hover::before {
+  width: 70%;
+}
+
+.navbar-links a.active::before {
+  width: 70%;
+}
+
+.react-multi-carousel-list {
+  padding: 10px 0 10px 0;
+}
+
+.hero-carouser .react-multiple-carousel__arrow--left {
+  left: 0 !important;
+}
+
+.hero-carouser .react-multiple-carousel__arrow--right {
+  right: 0 !important;
+}
+
+.loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading .spin {
+  color: #0075ff;
+  font-size: 70px;
+  font-weight: bold;
+  animation: spinner 1s infinite linear;
+}
+
+
+.responsive-links .link-secondary a.active {
+  background-color: #454545;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.shop-right-side::-webkit-scrollbar {
+  width: 0;
+}
+
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@theme {
+  --color-primary: #0075ff;
+  --grid-template-columns-auto: repeat(auto-fill, minmax(250px, 1fr));
+  --grid-template-columns-autoo: repeat(auto-fill, minmax(220px, 1fr))
+}
