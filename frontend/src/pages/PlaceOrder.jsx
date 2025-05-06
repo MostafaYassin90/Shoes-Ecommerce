@@ -96,10 +96,12 @@ const PlaceOrder = () => {
         const response = await axios.post(backend_url + "/api/order/pay-online", orderDetails, {
           headers: { authorization: "Bearer " + token }
         });
+        console.log(response);
         if (response.data.success) {
           window.location.replace(response.data.session_url);
         }
       } catch (error) {
+        console.log(error);
         toast.error(error.response.data.message || error.message);
       }
     }

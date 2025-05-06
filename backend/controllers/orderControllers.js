@@ -43,7 +43,8 @@ const placeOrder = async (req, res) => {
 /* -------- pay-online ----------- */
 const payOrderOnline = async (req, res) => {
 
-  const frontend_url = "https://shoes-ecommerce-frontend-three.vercel.app";
+  // const frontend_url = "https://shoes-ecommerce-frontend-three.vercel.app";
+  const frontend_url = "http://localhost:5173";
 
   const { items, address, amount, method } = req.body;
   const { id: userId } = req.user;
@@ -57,7 +58,7 @@ const payOrderOnline = async (req, res) => {
     userId: userId,
     items: items,
     address: address,
-    amount: amount,
+    amount: Number(amount),
     method: method,
   };
 
@@ -66,11 +67,11 @@ const payOrderOnline = async (req, res) => {
   const order = await newOrder.save();
 
   // Stripe 
-  let line_items = items.map((item) => ({
+  const line_items = items.map((item) => ({
     price_data: {
       currency: "USD",
       product_data: {
-        name: item.name
+        name: item.title
       },
       unit_amount: ((item.price - (item.price * (item.discount / 100))) * 100)
     },
