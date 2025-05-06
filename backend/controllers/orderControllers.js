@@ -43,7 +43,7 @@ const placeOrder = async (req, res) => {
 /* -------- pay-online ----------- */
 const payOrderOnline = async (req, res) => {
 
-  const frontend_url = "http://localhost:5173";
+  const frontend_url = "https://shoes-ecommerce-frontend-three.vercel.app";
 
   const { items, address, amount, method } = req.body;
   const { id: userId } = req.user;
