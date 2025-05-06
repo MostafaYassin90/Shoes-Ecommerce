@@ -5,7 +5,7 @@ import SideBar from './components/SideBar';
 import Dashboard from './pages/Dashboard';
 import { Route, Routes } from 'react-router-dom';
 import AddProduct from './pages/AddProduct';
-import Login from './pages/auth/login';
+import Login from './pages/auth/Login';
 import ProductsList from './pages/ProductsList';
 import Orders from './pages/Orders';
 import Users from './pages/Users';
