@@ -33,7 +33,7 @@ app.use("/api/admin", adminRouter);
 app.use("/api/product", productRouter);
 
 app.get("/", async (req, res) => {
-  return res.send("Server Is Working!");
+  res.send("API Working!");
 });
 
 
